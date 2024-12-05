@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simon Kamau Portfolio</title>
+    <link rel="stylesheet" href="./simon.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <!-- Hamburger Menu Icon -->
+        <div class="menu-icon" onclick="toggleMenu()">MENU ☰</div>
+
+        <!-- Navigation Menu -->
+        <ul class="menu" id="menu">
+            <li onclick="showContent('about')">About Me</li>
+            <li onclick="showContent('skills')">Skills & Expertise</li>
+            <li onclick="showContent('portfolio')">Portfolio Projects</li>
+            <li onclick="showContent('work-experience')">Work Experience</li>
+            <li onclick="showContent('testimonials')">Testimonials & Recommendations</li>
+            <li onclick="showContent('awards')">Awards & Recognition</li>
+            <li onclick="showContent('contact')">Contact Information</li>
+            <li onclick="showContent('hobbies')">Personal Interests & Hobbies</li>
+            <li onclick="showContent('goals')">Future Goals & Vision</li>
+            <li onclick="showContent('download')">Downloadable Portfolio</li>
+        </ul>
+
+        <!-- Header with Image Upload and Logout Button -->
+        <div class="header-right">
+            <div class="welcome-message">
+                <span>W</span>
+                <span>e</span>
+                <span>l</span>
+                <span>c</span>
+                <span>o</span>
+                <span>m</span>
+                <span>e</span>
+                <span>&nbsp;</span> 
+                <span>B</span>
+                <span>a</span>
+                <span>c</span>
+                <span>k</span>
+                <span>!!</span>
+            </div>
+            <div class="image-upload-container">
+                <label for="profile-upload" class="upload-btn">
+                    <span>Upload Profile Image</span>
+                    <input type="file" id="profile-upload" accept="image/*" onchange="uploadImage()" />
+                </label>
+                <img src="profile.jpg" class="profile-image" id="profile-image" alt="Profile">
+            </div>
+            
+            <button class="logout-btn" onclick="logout()">Logout</button>
+        </div>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="maindiv">
+        <div class="move" id="content-display">
+            <!-- Dynamic content will appear here -->
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <div class="copy">
+        Copyright &copy; 2024 SMARTECH Softwares Global 🌐.
+    </div>
+
+    <script src="./simon.js"></script>
+</body>
+</html>
