@@ -38,7 +38,7 @@ body {
         background-image: url('images/CHAT.jpg'), url('image1.jpg'), url('image2.jpg');
     }
     100% {
-        background-image: url('images./BOT.jpg'), url('image2.jpg'), url('image3.jpg');
+        background-image: url('images/BOT.jpg'), url('image2.jpg'), url('image3.jpg');
     }
 }
 
