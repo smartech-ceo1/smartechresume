@@ -20,25 +20,25 @@ body {
     box-sizing: border-box;
     
     /* Set up background animation for alternating images */
-    background-image: url('./pexels-pixabay-268533.jpg'), url('./pexels-veeterzy-303383.jpg'), url('./CHAT.jpg'),url('./BOT.jpg');
+    background-image: url('images/pexels-pixabay-268533.jpg'), url('images/pexels-veeterzy-303383.jpg'), url('images/CHAT.jpg'),url('images/BOT.jpg');
     background-size: cover;
     background-position: center center;
-    animation: backgroundAnimation 45s infinite linear;
+    animation: backgroundAnimation 15s infinite linear;
 }
 
 /* Animation for alternating background images */
 @keyframes backgroundAnimation {
     0% {
-        background-image: url('images/pexels-pixabay-268533.jpg'), url('images/image2.jpg'), url('images/image3.jpg');
+        background-image: url('images/pexels-pixabay-268533.jpg');
     }
     33% {
-        background-image: url('images/pexels-veeterzy-303383.jpg'), url('image3.jpg'), url('image1.jpg');
+        background-image: url('images/pexels-veeterzy-303383.jpg');
     }
     66% {
-        background-image: url('images/CHAT.jpg'), url('image1.jpg'), url('image2.jpg');
+        background-image: url('images/CHAT.jpg');
     }
     100% {
-        background-image: url('images/BOT.jpg'), url('image2.jpg'), url('image3.jpg');
+        background-image: url('images/BOT.jpg');
     }
 }
 
