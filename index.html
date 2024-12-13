@@ -3,236 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SK Portfolio | Login</title>
-    <style>
-        /* CSS Code */
-        body {
-            font-family: "Poppins", Arial, sans-serif;
-            background: linear-gradient(135deg, #6c63ff, #96deda);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-
-        .container {
-            display: flex;
-            background: #fff;
-            border-radius: 15px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-            width: 900px;
-            overflow: hidden;
-            animation: fadeIn 1s ease-out;
-        }
-
-        .photo-section {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            background: linear-gradient(135deg, #6c63ff, #4d4aed);
-            color: white;
-            padding: 20px;
-        }
-
-        .photo-section img {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            border: 4px solid #fff;
-            object-fit: cover;
-        }
-
-        .photo-section h2 {
-            margin: 15px 0;
-            font-size: 1.8rem;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-        }
-
-        .social-icons {
-            margin-top: 20px;
-            display: flex;
-            gap: 15px;
-        }
-
-        .social-icons a {
-            color: white;
-            text-decoration: none;
-            font-size: 15px;
-            transition: transform 0.3s ease, color 0.3s ease;
-        }
-
-        .social-icons a:hover {
-            transform: translateY(-5px);
-            color: #96deda;
-        }
-
-        .login-section {
-            flex: 1;
-            padding: 40px 30px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .login-section h2 {
-            text-align: center;
-            margin-bottom: 30px;
-            color: #333;
-            font-size: 2rem;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-            position: relative;
-        }
-
-        .form-group label {
-            font-size: 14px;
-            color: #555;
-        }
-
-        .form-group input {
-            width: 100%;
-            padding: 12px;
-            margin-top: 5px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 14px;
-            transition: border-color 0.3s;
-        }
-
-        .form-group input:focus {
-            border-color: #6c63ff;
-            outline: none;
-            box-shadow: 0 0 5px rgba(108, 99, 255, 0.4);
-        }
-
-        .toggle-password {
-            position: absolute;
-            top: 37px;
-            right: 10px;
-            cursor: pointer;
-            color: #aaa;
-            font-size: 18px;
-        }
-
-        .login-btn {
-            width: 100%;
-            padding: 12px;
-            background: linear-gradient(135deg, #6c63ff, #96deda);
-            border: none;
-            border-radius: 5px;
-            color: white;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .login-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(108, 99, 255, 0.4);
-        }
-
-        .form-links {
-            margin-top: 10px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 14px;
-        }
-
-        .form-links a {
-            color: #6c63ff;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-
-        .form-links a:hover {
-            color: #4d4aed;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: scale(0.9);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-    </style>
+    <title>Simon Kamau Portfolio</title>
+    <link rel="stylesheet" href="./simon.css">
 </head>
 <body>
-    <div class="container">
-        <!-- Photo Section -->
-        <div class="photo-section">
-            <img src="images/simon2.jpg" alt="photo">
-            <h2>Simon Kamau</h2>
-            <div class="social-icons">
-                <a href="https://twitter.com" target="_blank">🐦Twitter</a>
-                <a href="https://facebook.com" target="_blank">📘Facebook</a>
-                <a href="https://instagram.com" target="_blank">📸Instagram</a>
-                <a href="https://whatsapp.com" target="_blank">💬Whatsapp</a>
-            </div>
-        </div>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <!-- Hamburger Menu Icon -->
+        <div class="menu-icon" onclick="toggleMenu()">MENU ☰</div>
 
-        <!-- Login Section -->
-        <div class="login-section">
-            <h2>Login</h2>
-            <form id="login-form" onsubmit="return handleLogin(event)">
-                <div class="form-group">
-                    <label for="username">Username</label>
-                    <input type="text" id="username" placeholder="Enter username" required>
-                </div>
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" placeholder="Enter password" required>
-                    <i class="toggle-password" id="toggle-password">👁️</i>
-                </div>
-                <div class="form-group">
-                    <label>
-                        <input type="checkbox" id="remember-me"> Remember Me
-                    </label>
-                </div>
-                <button type="submit" class="login-btn">Log In</button>
-            </form>
-            <div class="form-links">
-                <a href="#">Forgot Password?</a>
+        <!-- Navigation Menu -->
+        <ul class="menu" id="menu">
+            <li onclick="showContent('about')">About Me</li>
+            <li onclick="showContent('skills')">Skills & Expertise</li>
+            <li onclick="showContent('portfolio')">Portfolio Projects</li>
+            <li onclick="showContent('work-experience')">Work Experience</li>
+            <li onclick="showContent('testimonials')">Testimonials & Recommendations</li>
+            <li onclick="showContent('awards')">Awards & Recognition</li>
+            <li onclick="showContent('contact')">Contact Information</li>
+            <li onclick="showContent('hobbies')">Personal Interests & Hobbies</li>
+            <li onclick="showContent('goals')">Future Goals & Vision</li>
+            <li onclick="showContent('download')">Downloadable Portfolio</li>
+        </ul>
+
+        <!-- Header with Image Upload and Logout Button -->
+        <div class="header-right">
+            <div class="welcome-message">
+                <span>W</span>
+                <span>e</span>
+                <span>l</span>
+                <span>c</span>
+                <span>o</span>
+                <span>m</span>
+                <span>e</span>
+                <span>&nbsp;</span> 
+                <span>B</span>
+                <span>a</span>
+                <span>c</span>
+                <span>k</span>
+                <span>!!</span>
             </div>
-            <p id="error-message" class="error-message"></p>
+            <div class="image-upload-container">
+                <label for="profile-upload" class="upload-btn">
+                    <span>Upload Profile Image</span>
+                    <input type="file" id="profile-upload" accept="image/*" onchange="uploadImage()" />
+                </label>
+                <img src="profile.jpg" class="profile-image" id="profile-image" alt="Profile">
+            </div>
+            
+            <button class="logout-btn" onclick="logout()">Logout</button>
         </div>
     </div>
 
-    <script>
-        // Toggle password visibility
-        const togglePassword = document.getElementById('toggle-password');
-        const passwordInput = document.getElementById('password');
+    <!-- Main Content Area -->
+    <div class="maindiv">
+        <div class="move" id="content-display">
+            <!-- Dynamic content will appear here -->
+        </div>
+    </div>
 
-        togglePassword.addEventListener('click', () => {
-            const type = passwordInput.type === 'password' ? 'text' : 'password';
-            passwordInput.type = type;
-            togglePassword.textContent = type === 'password' ? '👁️' : '🙈';
-        });
+    <!-- Footer Section -->
+    <div class="copy">
+        Copyright &copy; 2024 SMARTECH Softwares Global 🌐.
+    </div>
 
-        // Handle login
-        function handleLogin(event) {
-            event.preventDefault();
-            const username = document.getElementById('username').value.trim();
-            const password = document.getElementById('password').value.trim();
-
-            if (username === "simon" && password === "kamau") {
-                alert("Login successful!");
-                window.location.href = "simon.html"; // Replace with your main page
-            } else {
-                document.getElementById('error-message').textContent = "Invalid username or password.";
-            }
-        }
-    </script>
+    <script src="./simon.js"></script>
 </body>
 </html>
